@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+"CREATE TABLE `vertex_customer_country` (\n  `customer_id` int(10) unsigned NOT NULL COMMENT 'Customer ID',\n  `customer_country` varchar(255) DEFAULT NULL COMMENT 'Customer Country',\n  PRIMARY KEY (`customer_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Country associated to Customer'"

@@ -1,0 +1,34 @@
+{
+    "name": "magento/module-advanced-sales-rule",
+    "description": "N/A",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "magento/framework": "103.0.*",
+        "magento/module-advanced-rule": "100.4.*",
+        "magento/module-backend": "102.0.*",
+        "magento/module-catalog": "104.0.*",
+        "magento/module-directory": "100.4.*",
+        "magento/module-eav": "102.1.*",
+        "magento/module-payment": "100.4.*",
+        "magento/module-quote": "101.2.*",
+        "magento/module-rule": "100.4.*",
+        "magento/module-sales-rule": "101.2.*",
+        "magento/module-shipping": "100.4.*",
+        "php": "~7.3.0||~7.4.0"
+    },
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\AdvancedSalesRule\\": ""
+        }
+    },
+    "version": "100.4.0"
+}

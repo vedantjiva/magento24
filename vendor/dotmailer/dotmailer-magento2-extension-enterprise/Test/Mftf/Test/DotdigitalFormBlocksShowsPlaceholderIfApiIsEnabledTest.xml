@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="DotdigitalFormBlocksShowsPlaceholderIfApiIsEnabled">
+        <annotations>
+            <features value="Engagement Cloud for Magento Commerce module"/>
+            <stories value="dotdigital form content type for Page Builder"/>
+            <title value="Test the active default state of the dotdigital form content type"/>
+            <description value="If there is a valid dotdigital API connection, the content type will display an empty placeholder when dragged to the stage."/>
+            <severity value="AVERAGE"/>
+            <group value="dotdigitalCommerce"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin1"/>
+            <actionGroup ref="SetDotmailerAccountData" stepKey="SetDotmailerAccountData"/>
+            <actionGroup ref="navigateToAPageWithPageBuilder" stepKey="navigateToAPageWithPageBuilder"/>
+            <actionGroup ref="switchToPageBuilderStage" stepKey="switchToPageBuilderStage"/>
+        </before>
+        <after>
+            <actionGroup ref="ResetAccountDataCLI" stepKey="resetAccount"/>
+            <actionGroup ref="AdminLogoutActionGroup" stepKey="logout"/>
+        </after>
+        <actionGroup ref="expandPageBuilderPanelMenuSection" stepKey="expandPageBuilderPanelMenuSection">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <actionGroup ref="dragContentTypeToStage" stepKey="dragDotdigitalFormIntoStage">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <seeElement stepKey="seeCorrectMessage" selector="{{FormsOnFrontend.emptyPlaceholder}}"/>
+        <actionGroup ref="openPageBuilderEditPanel" stepKey="openEditAfterDrop">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <dontSeeElement stepKey="dontSeeErrorSelector" selector="{{FormsOnFrontend.warningMessage}}"/>
+    </test>
+</tests>

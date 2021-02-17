@@ -1,0 +1,23 @@
+{
+    "name": "magento/module-customer-balance-sample-data",
+    "description": "N/A",
+    "require": {
+        "php": "~7.3.0||~7.4.0",
+        "magento/module-sample-data": "100.4.*",
+        "magento/module-customer-balance": "100.4.*"
+    },
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\CustomerBalanceSampleData\\": ""
+        }
+    },
+    "version": "100.4.0"
+}

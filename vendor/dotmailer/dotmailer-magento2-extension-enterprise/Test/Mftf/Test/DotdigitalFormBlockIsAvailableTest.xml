@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="DotdigitalFormBlockIsAvailableTest">
+        <annotations>
+            <features value="Engagement Cloud for Magento Commerce module"/>
+            <stories value="dotdigital form content type for Page Builder"/>
+            <title value="Test that the dotdigital form content type is available in the Page Builder panel"/>
+            <description value="Validates that the dotdigital form content type is available to use in Page Builder."/>
+            <severity value="AVERAGE"/>
+            <group value="dotdigitalCommerce"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+            <actionGroup ref="navigateToAPageWithPageBuilder" stepKey="navigateToAPageWithPageBuilder"/>
+            <actionGroup ref="switchToPageBuilderStage" stepKey="switchToPageBuilderStage"/>
+        </before>
+        <after>
+            <actionGroup ref="AdminLogoutActionGroup" stepKey="logoutAdminUserAfterTest"/>
+        </after>
+        <actionGroup ref="expandPageBuilderPanelMenuSection" stepKey="expandPageBuilderPanelMenuSection">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <actionGroup ref="assertBlockExists" stepKey="assertThatBlockExists">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+    </test>
+</tests>

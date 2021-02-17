@@ -1,0 +1,51 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
+type Query {
+    giftCardAccount(input: GiftCardAccountInput!): GiftCardAccount @resolver(class: "Magento\\GiftCardAccountGraphQl\\Model\\Resolver\\GiftCardAccount") @doc(description: "Get information for gift card account by code")
+}
+
+type Mutation {
+    applyGiftCardToCart(input: ApplyGiftCardToCartInput): ApplyGiftCardToCartOutput @resolver(class: "\\Magento\\GiftCardAccountGraphQl\\Model\\Resolver\\ApplyGiftCardToCart") @doc(description: "Apply a pre-defined gift card code to the specified cart.")
+    removeGiftCardFromCart(input: RemoveGiftCardFromCartInput): RemoveGiftCardFromCartOutput @resolver(class: "\\Magento\\GiftCardAccountGraphQl\\Model\\Resolver\\RemoveGiftCardFromCart")
+    redeemGiftCardBalanceAsStoreCredit(input: GiftCardAccountInput!): GiftCardAccount @resolver(class: "Magento\\GiftCardAccountGraphQl\\Model\\Resolver\\RedeemGiftCard") @doc(description: "Redeem gift card for store credit.")
+}
+
+input ApplyGiftCardToCartInput @doc(description: "Defines the input required to run the applyGiftCardToCart mutation") {
+    cart_id: String! @doc(description: "The unique ID that identifies the customer's cart")
+    gift_card_code: String! @doc(description: "The gift card code to be applied to the cart")
+}
+
+type ApplyGiftCardToCartOutput @doc(description: "Defines the possible output for the applyGiftCardToCart mutation") {
+    cart: Cart! @doc(description: "Describes the contents of the specified shopping cart")
+}
+
+input RemoveGiftCardFromCartInput @doc(description: "Defines the input required to run the removeGiftCardFromCart mutation") {
+    cart_id: String! @doc(description: "The unique ID that identifies the customer's cart")
+    gift_card_code: String! @doc(description: "The gift card code to be removed to the cart")
+}
+
+type RemoveGiftCardFromCartOutput @doc(description: "Defines the possible output for the removeGiftCardFromCart mutation") {
+    cart: Cart! @doc(description: "Describes the contents of the specified shopping cart")
+}
+
+type Cart {
+    applied_gift_cards: [AppliedGiftCard] @resolver(class: "\\Magento\\GiftCardAccountGraphQl\\Model\\Resolver\\GetAppliedGiftCardsFromCart") @doc(description: "Contains the code attribute, which specifies the applied gift card codes")
+}
+
+type AppliedGiftCard @doc(description: "Contains the applied gift card with applied and remaining balance") {
+    code: String @doc(description: "Gift card account code")
+    expiration_date: String @doc(description: "Gift card expiration date")
+    current_balance: Money @doc(description: "Current balance remaining on gift card")
+    applied_balance: Money @doc(description: "Applied balance to the current cart")
+}
+
+input GiftCardAccountInput {
+    gift_card_code: String! @doc(description: "Defines the input required to identify the gift card account")
+}
+
+type GiftCardAccount @doc(description: "Contains details about the gift card account") {
+    code: String @doc(description: "Gift card account code")
+    expiration_date: String @doc(description: "Gift card expiration date")
+    balance: Money @doc(description: "Balance remaining on gift card")
+}

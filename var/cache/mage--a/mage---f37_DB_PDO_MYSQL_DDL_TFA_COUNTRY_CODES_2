@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+"CREATE TABLE `tfa_country_codes` (\n  `country_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'TFA admin user ID',\n  `code` varchar(2) NOT NULL COMMENT 'Country code',\n  `name` varchar(255) NOT NULL COMMENT 'Country name',\n  `dial_code` varchar(255) NOT NULL COMMENT 'Prefix',\n  PRIMARY KEY (`country_id`),\n  KEY `TFA_COUNTRY_CODES_CODE` (`code`)\n) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8 COMMENT='tfa_country_codes'"

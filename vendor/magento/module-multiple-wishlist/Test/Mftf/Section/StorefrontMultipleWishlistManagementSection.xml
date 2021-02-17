@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="StorefrontMultipleWishlistManagementSection">
+        <element name="editWishlistButton" type="button" selector=".wishlist-title a[data-wishlist-edit]" timeout="30"/>
+        <element name="wishlistTitle" type="text" selector="div.wishlist-title strong"/>
+        <element name="multipleWishlistPageTitle" type="text" selector="body.page-multiple-wishlist .wishlist-title strong"/>
+        <element name="wishlistItemsDropdown" type="text" selector="div.actions-toolbar .wishlist.active .items"/>
+        <element name="firstCartItemWishListActions" type="text" selector="#shopping-cart-table tbody:first-of-type div.actions-toolbar .wishlist .toggle"/>
+        <element name="newButton" type="text" selector="div.actions-toolbar .wishlist.active .items .new"/>
+        <element name="createWishlistPopup" type="text" selector="#create-wishlist-block"/>
+        <element name="wishlistName" type="text" selector="#create-wishlist-form input#wishlist-name"/>
+        <element name="saveButton" type="text" selector="#create-wishlist-block .actions-toolbar button.save"/>
+        <element name="errorElement" type="text" selector="#{{inputName}}-error" parameterized="true" />
+    </section>
+</sections>

@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+"CREATE TABLE `session` (\n  `session_id` varchar(255) NOT NULL COMMENT 'Session Id',\n  `session_expires` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Date of Session Expiration',\n  `session_data` mediumblob NOT NULL COMMENT 'Session Data',\n  PRIMARY KEY (`session_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Database Sessions Storage'"

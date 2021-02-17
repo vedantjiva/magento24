@@ -1,0 +1,25 @@
+{
+    "name": "magento/module-gift-card-staging",
+    "description": "N/A",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "magento/framework": "103.0.*",
+        "magento/module-gift-card": "101.3.*",
+        "php": "~7.3.0||~7.4.0"
+    },
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\GiftCardStaging\\": ""
+        }
+    },
+    "version": "100.4.0"
+}

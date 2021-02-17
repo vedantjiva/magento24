@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+"CREATE TABLE `cache_tag` (\n  `tag` varchar(100) NOT NULL COMMENT 'Tag',\n  `cache_id` varchar(200) NOT NULL COMMENT 'Cache Id',\n  PRIMARY KEY (`tag`,`cache_id`),\n  KEY `CACHE_TAG_CACHE_ID` (`cache_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tag Caches'"

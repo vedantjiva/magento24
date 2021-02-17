@@ -1,0 +1,94 @@
+# Copyright © Magento, Inc. All rights reserved.
+# See COPYING.txt for license details.
+
+type StoreConfig {
+    allow_gift_wrapping_on_order: String @doc(description: "Allow Gift Wrapping on Order Level")
+    allow_gift_wrapping_on_order_items: String @doc(description: "Allow Gift Wrapping for Order Items")
+    allow_gift_receipt: String @doc(description: "Allow Gift Receipt")
+    allow_printed_card: String @doc(description: "Allow Printed Card")
+    printed_card_price: String @doc(description: "Default Price for Printed Card")
+    cart_gift_wrapping: String @doc(description: "Display Gift Wrapping Prices")
+    cart_printed_card: String @doc(description: "Display Printed Card Prices")
+    sales_gift_wrapping: String @doc(description: "Display Gift Wrapping Prices")
+    sales_printed_card: String @doc(description: "Display Printed Card Prices")
+}
+
+type Cart {
+    available_gift_wrappings: [GiftWrapping]! @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\GiftWrappingList") @doc(description: "The list of available gift wrapping options for the cart")
+    gift_wrapping: GiftWrapping @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\GiftWrapping") @doc(description: "The selected gift wrapping for the cart")
+    printed_card_included: Boolean! @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\PrintedCardIncluded") @doc(description: "Wether customer requested printed card for the cart")
+    gift_receipt_included: Boolean! @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\GiftReceiptIncluded") @doc(description: "Wether customer requested gift receipt for the cart")
+}
+
+type GiftWrapping {
+    id: ID! @doc(description: "Gift wrapping unique identifier")
+    design: String! @doc(description: "Gift wrapping design name")
+    price: Money! @doc(description: "Gift wrapping price")
+    image: GiftWrappingImage @doc(description: "Gift wrapping preview image")
+}
+
+type GiftWrappingImage {
+    label: String! @doc(description: "Gift wrapping preview image label")
+    url: String! @doc(description: "Gift wrapping preview image URL")
+}
+
+type GiftOptionsPrices {
+    gift_wrapping_for_order: Money @doc(description: "Price of the gift wrapping for the whole order")
+    gift_wrapping_for_items: Money @doc(description: "Price of the gift wrapping for all individual order items")
+    printed_card: Money @doc(description: "Price for the printed card")
+}
+
+type Mutation {
+    setGiftOptionsOnCart(input: SetGiftOptionsOnCartInput) : SetGiftOptionsOnCartOutput  @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\SetGiftOptionsOnCart") @doc(description: "Set gift options like gift wrapping or gift message for the entire cart")
+}
+
+input SetGiftOptionsOnCartInput {
+    cart_id: String! @doc(description:"The unique ID that identifies the shopper's cart")
+    gift_message: GiftMessageInput @doc(description: "Gift message details for the cart")
+    gift_wrapping_id: ID @doc(description: "The unique identifier of the gift wrapping to be used for the cart")
+    printed_card_included: Boolean! @doc(description: "Whether customer requested printed card for the cart")
+    gift_receipt_included: Boolean! @doc(description: "Whether customer requested gift receipt for the cart")
+}
+
+input GiftMessageInput {
+    to: String! @doc(description: "Recepient name")
+    from: String! @doc(description: "Sender name")
+    message: String! @doc(description: "Gift message text")
+}
+
+type SetGiftOptionsOnCartOutput {
+    cart: Cart! @doc(description: "The modified cart object")
+}
+
+type CartPrices {
+    gift_options: GiftOptionsPrices @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\GiftOptionsPrices") @doc(description: "The list of prices for the selected gift options")
+}
+
+type CustomerOrder {
+    gift_wrapping: GiftWrapping  @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Order\\GiftWrapping") @doc(description: "The selected gift wrapping for the order")
+    printed_card_included: Boolean! @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Order\\PrintedCardIncluded") @doc(description: "Whether customer requested printed card for the order")
+    gift_receipt_included: Boolean! @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Order\\GiftReceiptIncluded") @doc(description: "Whether customer requested gift receipt for the order")
+}
+
+type SimpleCartItem {
+    available_gift_wrapping: [GiftWrapping]! @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\Item\\GiftWrappingList") @doc(description: "The list of available gift wrapping options for the cart item")
+    gift_wrapping: GiftWrapping @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\Item\\GiftWrapping") @doc(description: "The selected gift wrapping for the cart item")
+}
+
+type ConfigurableCartItem {
+    available_gift_wrapping: [GiftWrapping]! @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\Item\\GiftWrappingList") @doc(description: "The list of available gift wrapping options for the cart item")
+    gift_wrapping: GiftWrapping @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\Item\\GiftWrapping") @doc(description: "The selected gift wrapping for the cart item")
+}
+
+type BundleCartItem {
+    available_gift_wrapping: [GiftWrapping]! @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\Item\\GiftWrappingList") @doc(description: "The list of available gift wrapping options for the cart item")
+    gift_wrapping: GiftWrapping @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Cart\\Item\\GiftWrapping") @doc(description: "The selected gift wrapping for the cart item")
+}
+
+input CartItemUpdateInput {
+    gift_wrapping_id: ID @doc(description: "The unique identifier of the gift wrapping to be used for the cart item")
+}
+
+interface OrderItemInterface {
+    gift_wrapping: GiftWrapping @resolver(class: "Magento\\GiftWrappingGraphQl\\Model\\Resolver\\Order\\Item\\GiftWrapping") @doc(description: "The selected gift wrapping for the order item")
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+    <section name="FormsOnFrontend">
+        <element name="popover" type="text" selector="[data-form-style='popover']"/>
+        <element name="embedded" type="text" selector="[data-form-style='embedded']"/>
+        <element name="emptyPlaceholder" type="text" selector=".placeholder-html-empty"/>
+        <element name="warningMessage" type="text" selector=".ddg-api-error-message"/>
+    </section>
+</sections>

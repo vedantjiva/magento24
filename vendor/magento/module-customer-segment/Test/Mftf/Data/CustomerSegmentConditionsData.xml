@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
+    <entity name="CustomerSegmentGroupConditionsData" type="data">
+        <data key="condition">Number of Orders</data>
+        <data key="ordersNumber">0</data>
+        <data key="conditionType">ANY</data>
+    </entity>
+    <entity name="CustomerSegmentCartTotalGreaterEquals75Condition" type="data">
+        <data key="condition">Shopping Cart Total*</data>
+        <data key="conditionType">equals or greater than</data>
+        <data key="defaultConditionType">is</data>
+        <data key="value">75</data>
+    </entity>
+    <entity name="CustomerSegmentCartTotalLessThan100Condition" type="data">
+        <data key="condition">Shopping Cart Total*</data>
+        <data key="conditionType">less than</data>
+        <data key="defaultConditionType">is</data>
+        <data key="value">100</data>
+    </entity>
+    <entity name="CustomerSegmentConditionsForOrdersData" type="data" extends="CustomerSegmentGroupConditionsData">
+        <data key="selectedCondition">equals or greater than</data>
+        <data key="conditionType">ALL</data>
+    </entity>
+    <entity name="CustomerSegmentConditionsType">
+        <data key="newsletter">Magento\CustomerSegment\Model\Segment\Condition\Customer\Newsletter</data>
+    </entity>
+    <entity name="CustomerSegmentByBirthDateData" type="data">
+        <data key="operator">is</data>
+        <data key="condition">Date of Birth</data>
+        <data key="yearOfBirth">1990</data>
+        <data key="monthOfBirth">Jan</data>
+        <data key="dayOfBirth">1</data>
+    </entity>
+
+</entities>

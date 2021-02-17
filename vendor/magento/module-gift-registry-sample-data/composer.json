@@ -1,0 +1,25 @@
+{
+    "name": "magento/module-gift-registry-sample-data",
+    "description": "N/A",
+    "require": {
+        "php": "~7.3.0||~7.4.0",
+        "magento/module-sample-data": "100.4.*",
+        "magento/module-gift-registry": "101.2.*",
+        "magento/module-directory": "100.4.*",
+        "magento/module-store": "101.1.*"
+    },
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\GiftRegistrySampleData\\": ""
+        }
+    },
+    "version": "100.4.0"
+}

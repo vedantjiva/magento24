@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+"CREATE TABLE `widget` (\n  `widget_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Widget ID',\n  `widget_code` varchar(255) DEFAULT NULL COMMENT 'Widget code for template directive',\n  `widget_type` varchar(255) DEFAULT NULL COMMENT 'Widget Type',\n  `parameters` text COMMENT 'Parameters',\n  PRIMARY KEY (`widget_id`),\n  KEY `WIDGET_WIDGET_CODE` (`widget_code`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Preconfigured Widgets'"

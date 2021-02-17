@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+{"FK_9221D90F23B9A75B6A9E48D763D01D02":{"FK_NAME":"FK_9221D90F23B9A75B6A9E48D763D01D02","SCHEMA_NAME":null,"TABLE_NAME":"magento_invitation_status_history","COLUMN_NAME":"invitation_id","REF_SHEMA_NAME":"","REF_TABLE_NAME":"magento_invitation","REF_COLUMN_NAME":"invitation_id","ON_DELETE":"CASCADE"}}

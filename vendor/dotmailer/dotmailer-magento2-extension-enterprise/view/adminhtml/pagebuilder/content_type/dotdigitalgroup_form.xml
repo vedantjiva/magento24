@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="dotdigitalgroup_form"
+          label="dotdigital form"
+          menu_section="add_content"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Dotdigitalgroup_Enterprise/js/content-type/dotdigitalgroup-form/preview"
+          master_component="Magento_PageBuilder/js/content-type/master"
+          form="pagebuilder_dotdigitalgroup_form_form"
+          icon="icon-form"
+          sortOrder="21"
+          translate="label">
+        <children default_policy="deny"/>
+        <parents default_policy="deny">
+            <parent name="row" policy="allow"/>
+            <parent name="column" policy="allow"/>
+        </parents>
+        <appearances>
+            <appearance name="default"
+                        default="true"
+                        preview_template="Dotdigitalgroup_Enterprise/content-type/dotdigitalgroup-form/default/preview"
+                        master_template="Dotdigitalgroup_Enterprise/content-type/dotdigitalgroup-form/default/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="form">
+                        <attribute name="account_select" source="data-account-id"/>
+                        <attribute name="form_select" source="data-form-id"/>
+                        <attribute name="form_name" source="data-form-name"/>
+                        <attribute name="form_style" source="data-form-style"/>
+                        <attribute name="show_after" source="data-delay"/>
+                        <attribute name="stop_displaying" source="data-stop-displaying"/>
+                        <attribute name="appearances" source="data-appearances"/>
+                        <attribute name="show_mobile" source="data-mobile"/>
+                        <attribute name="enable_use_esc" source="data-key-dismiss"/>
+                        <attribute name="add_respondent" source="data-add-respondent"/>
+                        <attribute name="script_src" source="src"/>
+                        <attribute name="form_page_id" source="data-page-id"/>
+                        <attribute name="form_domain" source="data-page-domain"/>
+                        <attribute name="form_sharing" source="data-sharing"/>
+                    </element>
+                    <element name="main">
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                    </element>
+                </elements>
+            </appearance>
+        </appearances>
+        <additional_data>
+            <item name="formConfig" xsi:type="array">
+                <item name="token" xsi:type="object">\Dotdigitalgroup\Enterprise\Model\Config\ContentType\AdditionalData\Provider\MagentoApiAccessToken</item>
+                <item name="baseUrl" xsi:type="object">\Dotdigitalgroup\Enterprise\Model\Config\ContentType\AdditionalData\Provider\BaseUrl</item>
+            </item>
+        </additional_data>
+    </type>
+</config>

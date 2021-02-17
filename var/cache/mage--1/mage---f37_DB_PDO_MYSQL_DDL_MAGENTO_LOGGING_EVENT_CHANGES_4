@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+{"FK_D29B0056693455AC9AC172C00D82F9D9":{"FK_NAME":"FK_D29B0056693455AC9AC172C00D82F9D9","SCHEMA_NAME":null,"TABLE_NAME":"magento_logging_event_changes","COLUMN_NAME":"event_id","REF_SHEMA_NAME":"","REF_TABLE_NAME":"magento_logging_event","REF_COLUMN_NAME":"log_id","ON_DELETE":"CASCADE"}}

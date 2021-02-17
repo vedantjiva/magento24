@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+{"INV_PICKUP_LOCATION_QUOTE_ADDR_ADDR_ID_QUOTE_ADDR_ADDR_ID":{"FK_NAME":"INV_PICKUP_LOCATION_QUOTE_ADDR_ADDR_ID_QUOTE_ADDR_ADDR_ID","SCHEMA_NAME":null,"TABLE_NAME":"inventory_pickup_location_quote_address","COLUMN_NAME":"address_id","REF_SHEMA_NAME":"","REF_TABLE_NAME":"quote_address","REF_COLUMN_NAME":"address_id","ON_DELETE":"CASCADE"}}

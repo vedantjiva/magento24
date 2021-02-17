@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="DotdigitalFormFieldsAreEnabledWhenPopover">
+        <annotations>
+            <features value="Engagement Cloud for Magento Commerce module"/>
+            <stories value="dotdigital form content type for Page Builder"/>
+            <title value="Form fields are enabled when the Pop-over style is selected"/>
+            <description value="Setting Style to 'Pop-over' enables most other settings."/>
+            <severity value="AVERAGE"/>
+            <group value="dotdigitalCommerce"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+            <actionGroup ref="navigateToAPageWithPageBuilder" stepKey="navigateToAPageWithPageBuilder"/>
+            <actionGroup ref="switchToPageBuilderStage" stepKey="switchToPageBuilderStage"/>
+        </before>
+        <after>
+            <actionGroup ref="AdminLogoutActionGroup" stepKey="logoutAdminUserAfterTest"/>
+        </after>
+        <actionGroup ref="expandPageBuilderPanelMenuSection" stepKey="expandPageBuilderPanelMenuSection">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <actionGroup ref="dragContentTypeToStage" stepKey="dragDotdigitalFormIntoStage">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <actionGroup ref="openPageBuilderEditPanel" stepKey="openEditAfterDrop">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <actionGroup ref="chooseVisualSelectOption" stepKey="enterAppearanceProperty">
+            <argument name="property" value="DotdigitalFormStyle_Popover"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelFieldIsNotDisabled" stepKey="checkShowAfterIsEnabled">
+            <argument name="property" value="DotdigitalFormSettings_ShowAfter"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelFieldIsNotDisabled" stepKey="checkStopDisplayingIsEnabled">
+            <argument name="property" value="DotdigitalFormSettings_StopDisplaying"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelFieldIsNotDisabled" stepKey="checkShowOnMobileIsEnabled">
+            <argument name="property" value="DotdigitalFormSettings_ShowOnMobile"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelFieldIsNotDisabled" stepKey="checkUseOfEscIsEnabled">
+            <argument name="property" value="DotdigitalFormSettings_UseOfEsc"/>
+        </actionGroup>
+    </test>
+</tests>

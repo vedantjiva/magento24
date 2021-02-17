@@ -1,0 +1,34 @@
+{
+    "name": "magento/module-sales-rule-staging",
+    "description": "N/A",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "magento/framework": "103.0.*",
+        "magento/module-backend": "102.0.*",
+        "magento/module-banner": "101.2.*",
+        "magento/module-config": "101.2.*",
+        "magento/module-quote": "101.2.*",
+        "magento/module-rule": "100.4.*",
+        "magento/module-reminder": "101.2.*",
+        "magento/module-sales-rule": "101.2.*",
+        "magento/module-advanced-sales-rule": "100.4.*",
+        "magento/module-staging": "101.2.*",
+        "magento/module-ui": "101.2.*",
+        "php": "~7.3.0||~7.4.0"
+    },
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\SalesRuleStaging\\": ""
+        }
+    },
+    "version": "100.4.0"
+}

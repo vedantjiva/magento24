@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd">
+
+    <entity name="PageBuilderDotdigitalFormsContentType" type="pagebuilder_content_type">
+        <data key="name">dotdigital form</data>
+        <data key="section">Add Content</data>
+        <data key="role">dotdigital-form</data>
+        <data key="editPanelName">dotdigital form</data>
+        <data key="pageNamePrefix">dotdigital form</data>
+    </entity>
+    <entity name="DotdigitalFormStyle_Embedded" type="dotdigital_form_field_property">
+        <data key="name">Style</data>
+        <data key="section">general</data>
+        <data key="fieldName">form_style</data>
+        <data key="value">embedded</data>
+    </entity>
+    <entity name="DotdigitalFormStyle_Popover" type="dotdigital_form_field_property">
+        <data key="name">Style</data>
+        <data key="section">general</data>
+        <data key="fieldName">form_style</data>
+        <data key="value">popover</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_FormSelect" type="dotdigital_form_field_property">
+        <data key="name">Select Form</data>
+        <data key="section">general</data>
+        <data key="fieldName">form_select</data>
+        <data key="errorMessage">This is a required field.</data>
+        <data key="value">Test form</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_AccountSelect" type="dotdigital_form_field_property">
+        <data key="name">Select dotdigital Account</data>
+        <data key="section">general</data>
+        <data key="fieldName">account_select</data>
+        <data key="value">0</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_ShowAfter" type="dotdigital_form_field_property">
+        <data key="name">Show After</data>
+        <data key="section">general</data>
+        <data key="fieldName">show_after</data>
+        <data key="value">none</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_StopDisplaying" type="dotdigital_form_field_property">
+        <data key="name">Stop Displaying</data>
+        <data key="section">general</data>
+        <data key="fieldName">stop_displaying</data>
+        <data key="value">completed</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_StopDisplayingAppearances" type="dotdigital_form_field_property">
+        <data key="name">Stop Displaying</data>
+        <data key="section">general</data>
+        <data key="fieldName">stop_displaying</data>
+        <data key="value">appearances</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_Appearances" type="dotdigital_form_field_property">
+        <data key="name">Appearances</data>
+        <data key="section">general</data>
+        <data key="fieldName">appearances</data>
+        <data key="value">0</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_ShowOnMobile" type="dotdigital_form_field_property">
+        <data key="name">Show on mobile devices [not recommended]</data>
+        <data key="section">general</data>
+        <data key="fieldName">show_mobile</data>
+        <data key="value">0</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_UseOfEsc" type="dotdigital_form_field_property">
+        <data key="name">Enable use of 'Esc' to dismiss pop-over</data>
+        <data key="section">general</data>
+        <data key="fieldName">enable_use_esc</data>
+        <data key="value">1</data>
+    </entity>
+    <entity name="DotdigitalFormSettings_AddRespondent" type="dotdigital_form_field_property">
+        <data key="name">Add respondent to the Newsletter Subscribers list</data>
+        <data key="section">general</data>
+        <data key="fieldName">add_respondent</data>
+        <data key="value">1</data>
+    </entity>
+</entities>

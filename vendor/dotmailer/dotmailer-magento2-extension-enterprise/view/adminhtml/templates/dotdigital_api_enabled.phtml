@@ -1,0 +1,13 @@
+<?php
+/** @var Dotdigitalgroup\Enterprise\Block\DotdigitalApi $block */
+?>
+<script>
+    require.config({
+        config: {
+            'Dotdigitalgroup_Enterprise/js/content-type/dotdigitalgroup-form/preview': {
+                isDDGEnabled: '<?= $block->escapeJs($block->isEnabled()); ?>',
+                apiErrorMessage: '<?= $block->escapeJs($block->getActivationMessage()); ?>'
+            }
+        }
+    });
+</script>

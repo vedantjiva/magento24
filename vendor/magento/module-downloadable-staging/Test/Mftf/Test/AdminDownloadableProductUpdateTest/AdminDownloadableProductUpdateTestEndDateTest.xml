@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ /**
+  * Copyright © Magento, Inc. All rights reserved.
+  * See COPYING.txt for license details.
+  */
+-->
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="AdminDownloadableProductUpdateTestEndDateTest" extends="AdminDownloadableProductUpdateTestNoEndDateTest">
+        <annotations>
+            <features value="DownloadableStaging"/>
+            <stories value="Admin manages staging update"/>
+            <title value="Admin should be able to create Single Future Update with end date from Downloadable Product Page"/>
+            <description value="Admin should be able to create Single Future Update with end date from Downloadable Product Page"/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MC-3263"/>
+            <group value="DownloadableStaging"/>
+            <skip>
+                <issueId value="MAGETWO-93300"/>
+            </skip>
+        </annotations>
+
+        <!-- Create the new staging update -->
+        <generateDate stepKey="generateEndDate" before="fillOutNewStaging" date="+1 week" format="m/d/Y g:i A"/>
+        <actionGroup stepKey="fillOutNewStaging" ref="createEntityNameStagingUpdate">
+            <argument name="stagingUpdate" value="_defaultStaging"/>
+            <argument name="endDate" value="{$generateEndDate}"/>
+        </actionGroup>
+    </test>
+</tests>

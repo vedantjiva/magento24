@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+{"FK_A014B30B04B72DD0EAB3EECD779728D6":{"FK_NAME":"FK_A014B30B04B72DD0EAB3EECD779728D6","SCHEMA_NAME":null,"TABLE_NAME":"wishlist_item_option","COLUMN_NAME":"wishlist_item_id","REF_SHEMA_NAME":"","REF_TABLE_NAME":"wishlist_item","REF_COLUMN_NAME":"wishlist_item_id","ON_DELETE":"CASCADE"}}

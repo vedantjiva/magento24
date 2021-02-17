@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/dotdigital/forms/:websiteId" method="GET">
+        <service class="Dotdigitalgroup\Enterprise\Api\FormManagementInterface" method="getFormOptions"/>
+        <resources>
+            <resource ref="Magento_Backend::content"/>
+        </resources>
+    </route>
+    <route url="/V1/dotdigital/formData/:formId/:websiteId/:formStyle/" method="GET">
+        <service class="Dotdigitalgroup\Enterprise\Api\FormManagementInterface" method="getFormData"/>
+        <resources>
+            <resource ref="Magento_Backend::content"/>
+        </resources>
+    </route>
+</routes>

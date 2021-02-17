@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+"CREATE TABLE `inventory_pickup_location_order` (\n  `order_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Order ID',\n  `pickup_location_code` varchar(255) NOT NULL COMMENT 'Pickup Location Code',\n  PRIMARY KEY (`order_id`),\n  CONSTRAINT `INVENTORY_PICKUP_LOCATION_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID` FOREIGN KEY (`order_id`) REFERENCES `sales_order` (`entity_id`) ON DELETE CASCADE\n) ENGINE=InnoDB DEFAULT CHARSET=utf8"

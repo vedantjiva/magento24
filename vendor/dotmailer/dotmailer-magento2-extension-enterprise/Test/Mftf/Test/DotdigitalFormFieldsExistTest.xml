@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+    <test name="DotdigitalFormFieldsExist">
+        <annotations>
+            <features value="Engagement Cloud for Magento Commerce module"/>
+            <stories value="dotdigital form content type for Page Builder"/>
+            <title value="The expected settings are visible"/>
+            <description value="Confirms that the expected settings are visible for the dotdigital form content type."/>
+            <severity value="AVERAGE"/>
+            <group value="dotdigitalCommerce"/>
+        </annotations>
+        <before>
+            <actionGroup ref="AdminLoginActionGroup" stepKey="loginAsAdmin"/>
+            <actionGroup ref="navigateToAPageWithPageBuilder" stepKey="navigateToAPageWithPageBuilder"/>
+            <actionGroup ref="switchToPageBuilderStage" stepKey="switchToPageBuilderStage"/>
+        </before>
+        <after>
+            <actionGroup ref="AdminLogoutActionGroup" stepKey="logoutAdminUserAfterTest"/>
+        </after>
+        <actionGroup ref="expandPageBuilderPanelMenuSection" stepKey="expandPageBuilderPanelMenuSection">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <actionGroup ref="dragContentTypeToStage" stepKey="dragDotdigitalFormIntoStage">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <actionGroup ref="openPageBuilderEditPanel" stepKey="openEditAfterDrop">
+            <argument name="contentType" value="PageBuilderDotdigitalFormsContentType"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelFieldIsRequired" stepKey="checkFormSelectField">
+            <argument name="property" value="DotdigitalFormSettings_FormSelect"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelField" stepKey="checkAccountSelectField">
+            <argument name="property" value="DotdigitalFormSettings_AccountSelect"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelField" stepKey="checkEmbeddedField">
+            <argument name="property" value="DotdigitalFormStyle_Embedded"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelField" stepKey="checkPopoverField">
+            <argument name="property" value="DotdigitalFormStyle_Popover"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelField" stepKey="checkShowAfterField">
+            <argument name="property" value="DotdigitalFormSettings_ShowAfter"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelField" stepKey="checkAppearancesField">
+            <argument name="property" value="DotdigitalFormSettings_Appearances"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelField" stepKey="checkShowOnMobileField">
+            <argument name="property" value="DotdigitalFormSettings_ShowOnMobile"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelField" stepKey="checkUseOfEscField">
+            <argument name="property" value="DotdigitalFormSettings_UseOfEsc"/>
+        </actionGroup>
+        <actionGroup ref="validateSlideOutPanelField" stepKey="checkAddRespondentField">
+            <argument name="property" value="DotdigitalFormSettings_AddRespondent"/>
+        </actionGroup>
+    </test>
+</tests>

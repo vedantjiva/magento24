@@ -1,0 +1,33 @@
+{
+    "name": "magento/module-product-video-staging",
+    "description": "N/A",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "lib-libxml": "*",
+        "magento/framework": "103.0.*",
+        "magento/magento-composer-installer": "*",
+        "magento/module-backend": "102.0.*",
+        "magento/module-catalog": "104.0.*",
+        "magento/module-product-video": "100.4.*",
+        "php": "~7.3.0||~7.4.0"
+    },
+    "suggest": {
+        "magento/module-catalog-staging": "100.4.*",
+        "magento/module-staging": "101.2.*"
+    },
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\ProductVideoStaging\\": ""
+        }
+    },
+    "version": "100.4.0"
+}

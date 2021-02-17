@@ -1,0 +1,11 @@
+<!-- preview.html -->
+<div class="pagebuilder-content-type pagebuilder-dotdigital-form"
+     event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <div visible="!apiEnabled()" class="ddg-api-error-message"><p html="apiErrorMessage"></p></div>
+    <div visible="apiEnabled" class="pagebuilder-html">
+        <div class="placeholder-html-empty" attr="data.form.attributes">
+            <span text="placeholderText"/>
+        </div>
+    </div>
+    <render args="getOptions().template" />
+</div>

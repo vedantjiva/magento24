@@ -1,0 +1,28 @@
+{
+    "name": "magento/module-checkout-address-search-gift-registry",
+    "description": "N/A",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "magento/framework": "103.0.*",
+        "magento/module-checkout": "100.4.*",
+        "magento/module-customer": "103.0.*",
+        "magento/module-checkout-address-search": "100.4.*",
+        "magento/module-gift-registry": "101.2.*",
+        "php": "~7.3.0||~7.4.0"
+    },
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magento\\CheckoutAddressSearchGiftRegistry\\": ""
+        }
+    },
+    "version": "100.4.0"
+}

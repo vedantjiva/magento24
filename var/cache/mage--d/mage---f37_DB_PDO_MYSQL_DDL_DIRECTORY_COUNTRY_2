@@ -1,0 +1,2 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1613027440;s:6:"expire";i:9999999999;s:4:"tags";s:40:"f37_DB_PDO_MYSQL_DDL,f37_DB_DDL,f37_MAGE";}
+"CREATE TABLE `directory_country` (\n  `country_id` varchar(2) NOT NULL COMMENT 'Country ID in ISO-2',\n  `iso2_code` varchar(2) DEFAULT NULL COMMENT 'Country ISO-2 format',\n  `iso3_code` varchar(3) DEFAULT NULL COMMENT 'Country ISO-3',\n  PRIMARY KEY (`country_id`)\n) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Directory Country'"
